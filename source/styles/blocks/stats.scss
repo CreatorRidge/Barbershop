@@ -1,0 +1,47 @@
+.stats__header {
+  background-color: #ffffff;
+}
+
+.stats__slogan {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 30px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.stats__intro {
+  font-size: 20px;
+  text-align: center;
+}
+
+.stats__list {
+  color: #ffffff;
+  background-color: #353535;
+}
+
+.stats__item:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.stats__item:nth-child(odd) {
+  background-color: rgba(45, 38, 130, 0.05);
+}
+
+.stats__number {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 40px;
+}
+
+.stats__description {
+  line-height: 18px;
+}
+
+.stats__legend {
+  font-size: 20px;
+  line-height: 20px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.3);
+  background-color: $dark-grey;
+}
