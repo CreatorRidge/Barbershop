@@ -3,7 +3,27 @@
 }
 
 .contacts__phone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 280;
+  height: 50px;
   font-weight: 700;
   text-decoration: none;
-  color: #ffffff;
+  color: $white;
+  outline: 1px solid #3f3f3f;
+  outline-offset: -1px;
+
+  &:hover {
+    outline-color: #777777;
+  }
+
+  &:active,
+  &:focus,
+  &:focus-visible,
+  &:focus-within {
+    color: rgba(255, 255, 255, 0.3);
+    background-color: #252525;
+    outline: none;
+  }
 }

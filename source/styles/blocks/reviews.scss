@@ -6,8 +6,28 @@
   text-transform: uppercase;
 }
 
+.reviews__author-image {
+  @media (min-width: $tablet-width) {
+    border-radius: 50%;
+  }
+
+  @media (min-width: $desktop-width) {
+    border-radius: 0%;
+  }
+}
+
 .reviews__author-name {
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
+}
+
+.reviews__toggles {
+  .slider__toggle::after {
+    outline-color: $gray-mid;
+  }
+
+  .slider__toggle--current::after {
+    background-color: $gray-mid;
+  }
 }

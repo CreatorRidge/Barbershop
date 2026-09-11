@@ -4,6 +4,25 @@
   background-color: $dark-grey;
 }
 
+.advantages__item {
+  height: 275px;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: 95px 95px;
+
+  &--fast {
+    background-image: url("../../icons/stack.svg#advantage-1");
+  }
+
+  &--cool {
+    background-image: url("../../icons/stack.svg#advantage-2");
+  }
+
+  &--price {
+    background-image: url("../../icons/stack.svg#advantage-3");
+  }
+}
+
 .advantages__title {
   font-size: 30px;
   font-weight: 700;
@@ -13,4 +32,14 @@
 
 .advantages__description {
   font-size: 20px;
+}
+
+.advantages__toggles {
+  .slider__toggle::after {
+    outline-color: $white;
+  }
+
+  .slider__toggle--current::after {
+    background-color: $white;
+  }
 }

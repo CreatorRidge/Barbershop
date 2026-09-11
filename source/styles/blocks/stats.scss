@@ -1,5 +1,5 @@
 .stats__header {
-  background-color: #ffffff;
+  background-color: $white;
 }
 
 .stats__slogan {
@@ -16,8 +16,8 @@
 }
 
 .stats__list {
-  color: #ffffff;
-  background-color: #353535;
+  color: $white;
+  background-color: $gray-mid;
 }
 
 .stats__item:nth-child(even) {

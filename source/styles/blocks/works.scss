@@ -1,9 +1,69 @@
+.works-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $tablet-width) {
+    flex-direction: row;
+  }
+
+  &--lead::before {
+    position: absolute;
+    top: 400px;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 176px;
+    height: 50px;
+    color: $white;
+    background-color: $accent-brown;
+    content: "РАБОТА МЕСЯЦА";
+
+    @media (min-width: $tablet-width) {
+      top: 35px;
+    }
+
+    @media (min-width: $desktop-width) {
+      top: 25px;
+      right: 0;
+      left: auto;
+    }
+  }
+}
+
 .works-item__title {
   font-weight: 700;
   font-size: 24px;
 }
 
+.works-item__parameter-list {
+  display: flex;
+  flex-flow: row wrap;
+  column-gap: 80px;
+  list-style: none;
+}
+
 .works-item__parameter-item {
+  position: relative;
   font-size: 16px;
   text-transform: uppercase;
+
+  &--haircut::before {
+    @include pseudo-decor(21px, 20px, url("../../icons/stack.svg#haircut"));
+    @include center-y;
+    left: -35px;
+  }
+
+  &--shaving::before {
+    @include pseudo-decor(23px, 21px, url("../../icons/stack.svg#beard"));
+    @include center-y;
+    left: -40px;
+  }
+
+  &--mustache::before {
+    @include pseudo-decor(45px, 12px, url("../../icons/stack.svg#mustache"));
+    @include center-y;
+    left: -58px;
+  }
 }

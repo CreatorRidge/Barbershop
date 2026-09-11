@@ -3,8 +3,27 @@
 }
 
 .main-nav__toggle {
+  position: relative;
+  width: 70px;
+  height: 51px;
   text-decoration: none;
-  background-color: #6a4d38;
+  background: #6a4d38 url("../../icons/stack.svg#burger") center no-repeat;
+  background-size: 36px 18px;
   border: none;
   cursor: pointer;
+
+  .main-nav.main-nav--closed & {
+    background-image: url("../../icons/stack.svg#button-close");
+    background-size: 26px 26px;
+  }
+
+  @media (min-width: $tablet-width) {
+    display: none;
+  }
+}
+
+.main-nav__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }

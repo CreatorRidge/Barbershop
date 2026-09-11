@@ -1,3 +1,49 @@
+.user-list {
+  background-color: #6a4d38;
+}
+
 .user-list__login {
-  color: #ffffff;
+  text-decoration: none;
+  color: $white;
+}
+
+.user-list__login-icon {
+  fill: $white;
+  opacity: 0.3;
+
+  @media (min-width: $tablet-width) {
+    &:hover {
+      fill: $accent-brown;
+      opacity: 1;
+    }
+
+    &:active {
+      fill: $white;
+      opacity: 0.3;
+    }
+
+    &:focus,
+    &:focus-visible {
+      fill: $white;
+      opacity: 0.3;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    &:hover {
+      fill: $black;
+      opacity: 0.3;
+    }
+
+    &:active {
+      fill: $black;
+      opacity: 0.1;
+    }
+
+    &:focus,
+    &:focus-visible {
+      fill: $white;
+      opacity: 0.3;
+    }
+  }
 }
