@@ -1,0 +1,256 @@
+.appointment {
+  position: relative;
+
+  &::before {
+    @include pseudo-block(100%, $transition-height-mobile);
+    z-index: 1;
+    bottom: -$transition-height-mobile + 0.3px;
+    left: 0;
+    background: $bg-basic-color;
+    clip-path:
+      polygon(
+        0% 0%,
+        100% 0%,
+        100% calc(100% - #{$transition-height-mobile}),
+        50% 100%,
+        0% calc(100% - #{$transition-height-mobile}));
+  }
+
+  @media (min-width: $tablet-width) {
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.appointment-header {
+  padding-bottom: 67px;
+}
+
+.appointment__wrapper {
+  padding: 0 20px;
+  padding-bottom: 39px;
+
+  @media (min-width: $tablet-width) {
+    padding: 29px 64px 76px;
+  }
+
+  @media (min-width: $desktop-width) {
+    max-width: 960px;
+    margin: auto;
+    padding: 0;
+    padding-bottom: 87px;
+  }
+}
+
+.appointment-form__group {
+  margin: 0;
+  padding: 0;
+  border: none;
+
+  &--personal {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    @media (min-width: $tablet-width) {
+      gap: 35px;
+    }
+  }
+
+  &--haircut {
+    margin-top: 37px;
+
+    @media (min-width: $tablet-width) {
+      margin-top: 53px;
+    }
+
+    @media (min-width: $desktop-width) {
+      margin-top: 65px;
+    }
+  }
+
+  &--additional {
+    margin-top: 43px;
+
+    @media (min-width: $desktop-width) {
+      margin-top: 62px;
+    }
+  }
+}
+
+.appointment-form__container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.appointment-form__container--name {
+  @media (min-width: $tablet-width) {
+    flex-direction: row;
+    gap: 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    gap: 37px;
+  }
+}
+
+.appointment-form__container--contacts {
+  gap: 35px;
+
+  @media (min-width: $desktop-width) {
+    flex-direction: row;
+  }
+}
+
+.appointment-form__title {
+  font-size: 20px;
+  text-align: center;
+
+  @media (min-width: $tablet-width) {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-size: 30px;
+    line-height: 39px;
+    text-align: center;
+
+    &::before,
+    &::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background-color: $input-border;
+    }
+
+    &::before {
+      margin-right: 27px;
+    }
+
+    &::after {
+      margin-left: 27px;
+    }
+  }
+}
+
+.appointment-form__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.appointment-form__group--haircut .appointment-form__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 31;
+  margin-top: 36px;
+
+  @media (min-width: $tablet-width) {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 60px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-top: 44px;
+  }
+}
+
+.appointment-form__group--additional .appointment-form__list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 35px;
+  padding: 7px 0;
+
+  @media (min-width: $tablet-width) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 61px;
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 59px;
+    margin-top: 70px;
+  }
+}
+
+.appointment-form__radio {
+  display: flex;
+  flex-direction: column;
+}
+
+.appointment-form__label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+
+  &::before {
+    content: "";
+    display: block;
+    order: 2;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &--admiral::before {
+    width: 52px;
+    height: 49px;
+    background-image: url("../../icons/stack.svg#beard-1");
+  }
+
+  &--woodcutter::before {
+    width: 58px;
+    height: 68px;
+    background-image: url("../../icons/stack.svg#beard-2");
+  }
+
+  &--polarexplorer::before {
+    width: 63px;
+    height: 78px;
+    background-image: url("../../icons/stack.svg#beard-3");
+  }
+
+  &--boyar::before {
+    width: 57px;
+    height: 97px;
+    background-image: url("../../icons/stack.svg#beard-4");
+  }
+
+  &--wiseman::before {
+    width: 45px;
+    height: 104px;
+    background-image: url("../../icons/stack.svg#beard-5");
+  }
+
+  @media (min-width: $tablet-width) {
+    font-size: 24px;
+    line-height: 31px;
+  }
+}
+
+.appointment-form__button {
+  display: block;
+  width: 100%;
+  margin-top: 47px;
+  padding: 13px 0;
+  font-size: 18px;
+  line-height: 24px;
+  cursor: pointer;
+
+  @media (min-width: $tablet-width) {
+    margin-top: 59px;
+    font-size: 24px;
+    line-height: 31px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-top: 80px;
+    padding: 19px 0;
+  }
+}

@@ -1,11 +1,23 @@
 /* responsive */
 $tablet-width: 768px;
 $desktop-width: 1200px;
+$mobile-width-only: 767px;
 
 /* colors */
-$bg-basic-color: #f8f5f2;
-$accent-brown: #826550;
-$dark-grey: #292929;
-$gray-mid: #353535;
 $black: #000000;
 $white: #ffffff;
+$bg-basic-color: #f8f5f2;
+$accent-brown: #826550;
+$interaction-brown: #624530;
+$mid-brown: #6a4d38;
+$border-brown-warm: #886e5b;
+$border-brown-dark: #71543f;
+$dark-grey: #292929;
+$gray-mid: #353535;
+$input-border: #e5ddd5;
+$input-interaction: #d5c9bd;
+$table-border: #4a4a4a;
+
+$transition-height-mobile: 34px;
+$transition-height-tablet: 40px;
+$transition-height-desktop: 70px;

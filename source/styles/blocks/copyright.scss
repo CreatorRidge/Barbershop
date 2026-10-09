@@ -1,6 +1,15 @@
 .copyright {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 13px;
+  margin-top: 30px;
+  padding: 0 20px;
+
+  @media (min-width: $tablet-width) {
+    margin-top: 0;
+    padding: 0;
+  }
 }
 
 .copyright__text {
@@ -10,9 +19,9 @@
 
 .copyright__link {
   display: flex;
+  align-self: stretch;
   align-items: center;
   justify-content: center;
-  width: 280;
   height: 50px;
   font-weight: 700;
   line-height: 23px;
@@ -20,7 +29,7 @@
   text-decoration: none;
   text-transform: uppercase;
   color: $white;
-  outline: 1px solid #4a4a4a;
+  outline: 1px solid $table-border;
   outline-offset: -1px;
 
   &:hover {
@@ -34,5 +43,9 @@
     color: rgba(255, 255, 255, 0.3);
     background-color: #252525;
     outline: none;
+  }
+
+  @media (min-width: $tablet-width) {
+    padding: 14px 28px;
   }
 }

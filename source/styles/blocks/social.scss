@@ -1,13 +1,40 @@
+.social {
+  margin-top: 26px;
+
+  @media (min-width: $tablet-width) {
+    margin-top: 45px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-top: 0;
+  }
+}
+
+.social__slogan {
+  display: none;
+
+  @media (min-width: $desktop-width) {
+    display: block;
+    text-align: center;
+  }
+}
+
 .social__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 101px;
+  margin: 0;
+  padding: 0;
   list-style: none;
-  display: flex;
-  flex-direction: row;
+
+  @media (min-width: $desktop-width) {
+    grid-template-rows: 50px;
+    margin-top: 13px;
+  }
 }
 
 .social__item {
-  width: 107px;
-  height: 101px;
-  outline: 1px solid #4a4a4a;
+  outline: 1px solid $table-border;
   outline-offset: -1px;
 
   &:hover {
@@ -35,16 +62,28 @@
   &--vkontakte {
     mask-image: url("../../icons/stack.svg#vkontakte");
     mask-size: 23px 26px;
+
+    @media (min-width: $desktop-width) {
+      mask-size: 15px 17px;
+    }
   }
 
   &--youtube {
     mask-image: url("../../icons/stack.svg#youtube");
     mask-size: 36px 24px;
+
+    @media (min-width: $desktop-width) {
+      mask-size: 19px 13px;
+    }
   }
 
   &--telegram {
     mask-image: url("../../icons/stack.svg#telegram");
     mask-size: 30px 25px;
+
+    @media (min-width: $desktop-width) {
+      mask-size: 16px 13px;
+    }
   }
 
   &:active,

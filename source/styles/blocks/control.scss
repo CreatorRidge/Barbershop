@@ -1,0 +1,78 @@
+.control {
+  position: relative;
+  display: block;
+  padding-left: 61px;
+  line-height: 24px;
+  cursor: pointer;
+
+  &:has(.control-input[type="radio"]) {
+    padding-top: 67px;
+    padding-left: 0;
+
+    & .control-mark {
+      width: 52px;
+      height: 52px;
+    }
+  }
+}
+
+.control-mark {
+  @include center-y;
+  position: absolute;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  background-color: $white;
+  border: 1px solid $input-border;
+}
+
+.control:hover .control-mark {
+  border-color: $input-interaction;
+}
+
+.control:focus .control-mark {
+  border-color: $input-interaction;
+}
+
+.control:focus-within .control-mark {
+  outline: 4px solid rgba(0, 125, 250, 0.6);
+  outline-offset: -4px;
+}
+
+.control:active .control-mark {
+  background-color: $input-interaction;
+}
+
+.control-input[type="checkbox"]:checked + .control-mark {
+  background-color: $white;
+  background-image: url("../../icons/stack.svg#arrow");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 22px 16px;
+}
+
+.control:active .control-input[type="checkbox"]:checked + .control-mark {
+  background-color: $input-interaction;
+}
+
+.control-input[type="radio"] + .control-mark {
+  top: 0;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, 0%);
+}
+
+.control-input[type="radio"]:checked + .control-mark::before {
+  @include pseudo-block(18px, 18px);
+  top: 17px;
+  left: 17px;
+  background-color: $accent-brown;
+  border-radius: 50%;
+}
+
+.control-label {
+  @media (min-width: $tablet-width) {
+    font-size: 24px;
+    line-height: 31px;
+  }
+}

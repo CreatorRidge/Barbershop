@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html class="page" lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Барбершоп «Бородинский»</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="icon" href="favicon.ico">
+  <link rel="icon" href="favicons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="favicons/apple.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <script src="scripts/index.js" defer></script>
+</head>
+
+<body class="page__body">
+  <header class="main-header">
+    <a class="main-header__logo" href="#">
+      <picture>
+        <source media="(min-width: 1200px)" width="370px" height="153" type="image/svg+xml" srcset="images/logotype-desktop.svg">
+        <source media="(min-width: 768px)" width="370px" height="101" type="image/svg+xml" srcset="images/logotype-tablet.svg">
+        <img class="main-header__logo-image" src="images/logotype-phone.svg" width="226" height="30" alt="Барбершоп «Бородинский».">
+      </picture>
+    </a>
+    <nav class="main-nav main-nav--closed main-nav--nojs">
+      <button class="main-nav__toggle" type="button"><span class="visually-hidden">Открыть меню</span></button>
+      <div class="main-nav__wrapper">
+        <ul class="main-nav__list site-list">
+          <li class="site-list__item"><a class="site-list__link" href="index.html">Главная</a></li>
+          <li class="site-list__item"><a class="site-list__link" href="photo.html">Наши работы</a></li>
+          <li class="site-list__item site-list__item--active"><a class="site-list__link" href="#">Записаться</a></li>
+          <li class="site-list__item"><a class="site-list__link" href="#contacts">Контакты</a></li>
+          <li class="site-list__item"><a class="site-list__link" href="https://htmlacademy.ru">HTML Academy</a></li>
+        </ul>
+        <ul class="main-nav__list user-list">
+          <li class="user-list__item">
+            <a class="user-list__login js-login" href="login.html" aria-label="Войти в личный кабинет">
+              <svg class="user-list__login-icon" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="0 7 7.01 7 7.01 4.06 10.96 8.01 7.01 11.91 7.01 9.06 0 9.02 0 7" />
+                <polygon points="7.01 0 7.01 2 14.03 2 14.03 13.99 7.01 13.99 7.01 16 16 16 16 0 7.01 0" />
+              </svg>
+              <span>Войти</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="main-container">
+    <section class="appointment">
+      <header class="appointment-header main-title">
+        <h1 class="main-title__title">ЗАПИСЬ НА СТРИЖКУ</h1>
+        <a class="main-title__breadcrumb button button--secondary" href="index.html">На главную</a>
+      </header>
+      <div class="appointment__wrapper">
+        <form class="appointment__form appointment-form" action="https://echo.htmlacademy.ru" method="post">
+          <fieldset class="appointment-form__group appointment-form__group--personal">
+            <legend class="visually-hidden">Личные данные</legend>
+            <div class="appointment-form__container appointment-form__container--name">
+              <label class="visually-hidden" for="appointment-lastname">Фамилия</label>
+              <input class="appointment-form__input field" type="text" name="appointment-lastname" id="appointment-lastname" placeholder="Фамилия" required>
+              <label class="visually-hidden" for="appointment-name">Имя</label>
+              <input class="appointment-form__input field" type="text" name="appointment-name" id="appointment-name" placeholder="Имя" required>
+              <label class="visually-hidden" for="appointment-fathersname">Отчество</label>
+              <input class="appointment-form__input field" type="text" name="appointment-fathersname" id="appointment-fathersname" placeholder="Отчество">
+            </div>
+            <div class="appointment-form__container appointment-form__container--contacts">
+              <label class="visually-hidden" for="appointment-phone">Контактный телефон</label>
+              <input class="appointment-form__input field" type="tel" name="appointment-phone" id="appointment-phone" placeholder="Контактный телефон" required>
+              <label class="visually-hidden" for="appointment-email">Контактный e-mail</label>
+              <input class="appointment-form__input field" type="email" name="appointment-email" id="appointment-email" placeholder="Контактный e-mail" required>
+            </div>
+            <div class="appointment-form__container">
+              <label class="visually-hidden" for="appointment-comment">Дополнительная информация для мастера</label>
+              <textarea class="appointment-form__input field field--textarea" name="appointment-comment" id="appointment-comment" placeholder="Доп. информация для мастера"></textarea>
+            </div>
+          </fieldset>
+          <fieldset class="appointment-form__group appointment-form__group--haircut">
+            <legend class="appointment-form__title">ВЫБЕРИТЕ МОДЕЛЬ БОРОДЫ</legend>
+            <ul class="appointment-form__list">
+              <li class="appointment-form__item">
+                <label class="appointment-form__radio control">
+                  <input class="visually-hidden control-input" type="radio" name="appointment-group" value="Weight-gain">
+                  <span class="control-mark"></span>
+                  <span class="appointment-form__label appointment-form__label--admiral control-label">адмирал</span>
+                </label>
+              </li>
+              <li class="appointment-form__item">
+                <label class="appointment-form__radio control">
+                  <input class="visually-hidden control-input" type="radio" name="appointment-group" value="Weight-gain">
+                  <span class="control-mark"></span>
+                  <span class="appointment-form__label appointment-form__label--woodcutter control-label">лесоруб</span>
+                </label>
+              </li>
+              <li class="appointment-form__item">
+                <label class="appointment-form__radio control">
+                  <input class="visually-hidden control-input" type="radio" name="appointment-group" value="advice" checked>
+                  <span class="control-mark"></span>
+                  <span class="appointment-form__label appointment-form__label--polarexplorer control-label">полярник</span>
+                </label>
+              </li>
+              <li class="appointment-form__item">
+                <label class="appointment-form__radio control">
+                  <input class="visually-hidden control-input" type="radio" name="appointment-group" value="advice">
+                  <span class="control-mark"></span>
+                  <span class="appointment-form__label appointment-form__label--boyar control-label">боярин</span>
+                </label>
+              </li>
+              <li class="appointment-form__item">
+                <label class="appointment-form__radio control">
+                  <input class="visually-hidden control-input" type="radio" name="appointment-group" value="advice">
+                  <span class="control-mark"></span>
+                  <span class="appointment-form__label appointment-form__label--wiseman control-label">мудрец</span>
+                </label>
+              </li>
+            </ul>
+          </fieldset>
+          <fieldset class="appointment-form__group appointment-form__group--additional">
+            <legend class="appointment-form__title">ДОПОЛНИТЕЛЬНЫЕ УСЛУГИ</legend>
+            <ul class="appointment-form__list">
+              <li class="appointment-form__item">
+                <label class="appointment-form__checkbox control">
+                  <input class="visually-hidden control-input" type="checkbox" name="sweetener" checked>
+                  <span class="control-mark"></span>
+                  <span class="control-label">Подкрасить бороду</span>
+                </label>
+              </li>
+              <li class="appointment-form__item">
+                <label class="appointment-form__checkbox control">
+                  <input class="visually-hidden control-input" type="checkbox" name="water" checked>
+                  <span class="control-mark"></span>
+                  <span class="control-label">Накрутить усы</span>
+                </label>
+              </li>
+              <li class="appointment-form__item">
+                <label class="appointment-form__checkbox control">
+                  <input class="visually-hidden control-input" type="checkbox" name="milk">
+                  <span class="control-mark"></span>
+                  <span class="control-label">Причесать бороду</span>
+                </label>
+              </li>
+              <li class="appointment-form__item">
+                <label class="appointment-form__checkbox control">
+                  <input class="visually-hidden control-input" type="checkbox" name="vitamins">
+                  <span class="control-mark"></span>
+                  <span class="control-label">Подровнять виски</span>
+                </label>
+              </li>
+              <li class="appointment-form__item">
+                <label class="appointment-form__checkbox control">
+                  <input class="visually-hidden control-input" type="checkbox" name="vitamins">
+                  <span class="control-mark"></span>
+                  <span class="control-label">Убрать седину</span>
+                </label>
+              </li>
+              <li class="appointment-form__item">
+                <label class="appointment-form__checkbox control">
+                  <input class="visually-hidden control-input" type="checkbox" name="vitamins">
+                  <span class="control-mark"></span>
+                  <span class="control-label">Отполировать лысину</span>
+                </label>
+              </li>
+            </ul>
+          </fieldset>
+          <button class="appointment-form__button button button--primary" type="submit">ОТПРАВИТЬ ЗАЯВКУ</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <div class="main-footer__wrapper">
+      <div class="main-footer__contacts contacts" id="contacts">
+        <b class="contacts__title">Барбершоп «Бородинский»</b>
+        <p class="contacts__text">
+          г. Санкт-Петербург, ул. Большая Конюшенная 19/8<br>
+          <a class="contacts__phone" href="tel:+78125556666"><span class="contacts__phone-text">Тел.:</span> +7 (812) 555-66-66</a>
+        </p>
+      </div>
+      <div class="main-footer__social social">
+        <b class="social__slogan">Давайте дружить!</b>
+        <ul class="social__list">
+          <li class="social__item">
+            <a class="social__link social__link--vkontakte" href="https://vk.com/htmlacademy">
+              <span class="visually-hidden">Мы в Вконтакте</span></a>
+          </li>
+          <li class="social__item">
+            <a class="social__link social__link--youtube" href="https://www.youtube.com/user/htmlacademyru">
+              <span class="visually-hidden">Мы в Ютубе</span></a>
+          </li>
+          <li class="social__item">
+            <a class="social__link social__link--telegram" href="https://t.me/htmlacademy">
+              <span class="visually-hidden">Мы в Телеграме</span></a>
+          </li>
+        </ul>
+      </div>
+      <div class="main-footer__copyright copyright">
+        <b class="copyright__text">Разработано:</b>
+        <a class="copyright__link" href="https://htmlacademy.ru">HTML Academy</a>
+      </div>
+    </div>
+  </footer>
+
+  <section class="modal modal--close">
+    <h2>Личный кабинет</h2>
+    <p class="modal__description">Введите свой логин и пароль, чтобы войти</p>
+    <form class="modal__form" action="https://echo.htmlacademy.ru" method="post">
+      <p>
+        <label class="visually-hidden" for="user-login">Логин</label>
+        <input class="modal__input modal__input--icon-user" id="user-login" type="text" name="login" placeholder="Логин">
+      </p>
+      <p>
+        <label class="visually-hidden" for="user-password">Пароль</label>
+        <input class=" modal__input modal__input--icon-password" id="user-password" type="password" name="password" placeholder="Пароль">
+      </p>
+      <p class="modal__help">
+        <label class="modal__help-checkbox">
+          <input class="visually-hidden" type="checkbox" name="remember">
+          <span class="modal__help-indicator"></span>
+          Запомните меня
+        </label>
+        <a class="modal__restore" href="#">Я забыл пароль!</a>
+      </p>
+      <div class="modal__buttons">
+        <button class="modal__button button" type="submit">Войти</button>
+        <button class="modal__button modal__button--close" type="button">Закрыть</button>
+      </div>
+    </form>
+  </section>
+</body>
+
+</html>

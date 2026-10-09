@@ -1,4 +1,4 @@
-$primary-font: "PT Sans", "Arial", sans-serif;
+$primary-font: "PT Sans Narrow", "Arial", sans-serif;
 
-@include font-face("PT Sans", 400, url("../../fonts/ptsans/ptsans-400.woff2") format("woff2"));
-@include font-face("PT Sans", 700, url("../../fonts/ptsans/ptsans-700.woff2") format("woff2"));
+@include font-face("PT Sans Narrow", 400, url("../../fonts/ptsans/pt-sans-narrow.woff2") format("woff2"));
+@include font-face("PT Sans Narrow", 700, url("../../fonts/ptsans/pt-sans-narrow-bold.woff2") format("woff2"));

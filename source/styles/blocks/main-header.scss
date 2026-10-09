@@ -1,31 +1,95 @@
-.main-header__logo {
+.main-header {
   display: flex;
-  justify-content: center;
-  height: 85px;
+  flex-direction: column;
+  color: $white;
   background-color: #242424;
+
+  @media (min-width: $tablet-width) {
+    background-color: $black;
+    clip-path:
+      polygon(
+        0% 0%,
+        100% 0%,
+        100% calc(100% - #{$transition-height-tablet}),
+        50% 100%,
+        0% calc(100% - #{$transition-height-tablet})
+      );
+
+    &--index {
+      clip-path: none;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    clip-path:
+      polygon(
+        0% 0%,
+        100% 0%,
+        100% calc(100% - #{$transition-height-desktop}),
+        50% 100%,
+        0% calc(100% - #{$transition-height-desktop})
+      );
+
+    &--index {
+      clip-path: none;
+    }
+  }
+}
+
+.main-header__logo {
+  height: 85px;
+  text-align: center;
   background-image: none;
 
   @media (min-width: $tablet-width) {
     order: 2;
-    height: 400px;
-    background-color: #000000;
+    height: 213px;
+    background-color: $black;
     background-image: url("../../images/background-desktop@1x.jpg");
-    background-position: 50% -9px;
+    background-position: center center;
+    background-size: cover;
     background-repeat: no-repeat;
 
     @media (min-resolution: 2dppx) {
       background-image: url("../../images/background-desktop@2x.jpg");
       background-size: 1338px auto;
     }
+
+    .main-header--index & {
+      height: 400px;
+      background-position: 50% -9px;
+      background-size: cover;
+    }
   }
 
   @media (min-width: $desktop-width) {
-    height: 648px;
+    height: 307px;
     background-position: 50% 0;
     background-size: cover;
+
+    .main-header--index & {
+      height: 648px;
+    }
   }
 }
 
 .main-header__logo-image {
-  margin-top: 29px;
+  width: 226px;
+  height: 85px;
+
+  @media (min-width: $tablet-width) {
+    width: 370px;
+    height: 100px;
+    margin-top: 39px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 370px;
+    height: 153px;
+    margin-top: 57px;
+
+    .main-header--index & {
+      margin-top: 55px;
+    }
+  }
 }
