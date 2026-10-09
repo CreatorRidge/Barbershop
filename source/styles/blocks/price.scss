@@ -1,0 +1,207 @@
+.price {
+  position: relative;
+  padding-top: $transition-height-mobile;
+  color: $white;
+  background-color: $gray-mid;
+
+  &::before {
+    @include pseudo-block(100%, $transition-height-mobile);
+    bottom: -$transition-height-mobile + 0.3px;
+    left: 0;
+    background: $gray-mid;
+    clip-path:
+      polygon(
+        0% 0%,
+        100% 0%,
+        100% calc(100% - #{$transition-height-mobile}),
+        50% 100%,
+        0% calc(100% - #{$transition-height-mobile}));
+  }
+
+  @media (min-width: $tablet-width) {
+    padding-top: $transition-height-tablet;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-top: 0;
+  }
+}
+
+.price__wrapper {
+  padding: 40px 20px 20px;
+
+  @media (min-width: $tablet-width) {
+    padding: 50px 64px 56px;
+  }
+
+  @media (min-width: $desktop-width) {
+    display: grid;
+    grid-template-columns: 1fr 270px;
+    grid-template-areas:
+      "title title"
+      "list  promo";
+    gap: 60px;
+    max-width: 960px;
+    margin: auto;
+    padding: 76px 0 80px;
+  }
+}
+
+.price__title {
+  grid-area: title;
+  margin: 0;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 30px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 40px;
+  }
+}
+
+.price__list {
+  counter-reset: price-row;
+  grid-area: list;
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  margin: 32px 0 39px;
+
+  @media (min-width: $tablet-width) {
+    display: table;
+    width: 100%;
+    margin: 53px 0 9px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin: 0;
+  }
+}
+
+.price__group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  @media (min-width: $tablet-width) {
+    display: table-row;
+
+    &::before {
+      counter-increment: price-row;
+      content: counter(price-row) " ";
+      display: table-cell;
+      width: 72px;
+      padding: 14px 0;
+      font-weight: 400;
+      text-align: center;
+      vertical-align: middle;
+      color: rgba(255, 255, 255, 0.3);
+      border: 1px solid $table-border;
+    }
+
+    &:last-child .price__caption {
+      border-bottom: 1px solid $table-border;
+    }
+
+    &:not(:last-child) .price__description,
+    &:not(:last-child)::before {
+      border-bottom: none;
+    }
+  }
+}
+
+.price__caption {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $tablet-width) {
+    display: block;
+    border-top: 1px solid $table-border;
+  }
+}
+
+.price__headline {
+  font-weight: 700;
+
+  @media (min-width: $tablet-width) {
+    display: table-cell;
+    width: 100%;
+    padding: 14px 19px;
+    vertical-align: middle;
+    border-right: 1px solid $table-border;
+  }
+}
+
+.price__caption-subtext {
+  @media (min-width: $tablet-width) {
+    display: table-cell;
+    min-width: 160px;
+    padding: 14px 19px;
+    vertical-align: middle;
+  }
+}
+
+.price__description {
+  @media (min-width: $tablet-width) {
+    display: table-cell;
+    min-width: 160px;
+    padding: 14px 19px;
+    vertical-align: middle;
+    border: 1px solid $table-border;
+  }
+
+  @media (min-width: $desktop-width) {
+    min-width: 150px;
+  }
+}
+
+.price__promo {
+  display: flex;
+  align-items: center;
+  grid-area: promo;
+  padding: 18px 0;
+  background-image: url("../../icons/stack.svg#clock");
+  background-position: 21px center;
+  background-repeat: no-repeat;
+  background-size: 58px 57px;
+  border: 1px solid $table-border;
+
+  @media (min-width: $tablet-width) {
+    padding: 42px 0;
+    background-position: left 20px center;
+    background-size: 72px 71px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 0;
+    background-position: center top 35px;
+    background-size: 142px 139px;
+  }
+}
+
+.price__promo-group {
+  margin-left: 110px;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $tablet-width) {
+    display: block;
+    margin-left: 185px;
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+  @media (min-width: $desktop-width) {
+    display: flex;
+    flex-direction: column;
+    margin: 206px auto 0;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+  }
+}

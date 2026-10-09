@@ -1,7 +1,43 @@
+.main-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 20px 35px;
+
+  @media (min-width: $tablet-width) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 54px 64px 38px;
+  }
+
+  @media (min-width: $desktop-width) {
+    max-width: 960px;
+    margin: auto;
+    padding: 54px 0 79px;
+  }
+}
+
 .main-title__title {
+  margin: 0;
   font-weight: 700;
   font-size: 30px;
   line-height: 30px;
-  text-align: center;
   text-transform: uppercase;
+
+  .appointment-header & {
+    @media (min-width: $tablet-width) {
+      line-height: 100%;
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    font-size: 40px;
+  }
+}
+
+.main-title__breadcrumb {
+  @media (max-width: $mobile-width-only) {
+    display: none;
+  }
 }

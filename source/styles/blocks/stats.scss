@@ -1,47 +1,205 @@
+.stats {
+  color: $white;
+  background-color: $dark-grey;
+
+  @media (min-width: $tablet-width) {
+    background-color: $gray-mid;
+  }
+}
+
+.stats__wrapper {
+  @media (min-width: $tablet-width) {
+    $stats-shift: -179px;
+    position: relative;
+    top: $stats-shift;
+    margin-bottom: $stats-shift;
+    padding: 0 64px;
+  }
+
+  @media (min-width: $desktop-width) {
+    $stats-shift: -161px;
+    top: $stats-shift;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    max-width: 960px;
+    margin: auto;
+    margin-bottom: $stats-shift;
+    padding: 0;
+  }
+}
+
 .stats__header {
+  padding: 28px 20px;
+  color: $black;
   background-color: $white;
+
+  @media (min-width: $tablet-width) {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 17px;
+    padding: 25px 34px 30px;
+
+    &::before {
+      @include pseudo-block(23px, 23px);
+      top: 42px;
+      left: -23px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3Cpolygon points='0,0 1,0 1,1' fill='white'/%3E%3C/svg%3E");
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-template-columns: auto;
+    grid-template-rows: min-content;
+    align-content: start;
+  }
 }
 
 .stats__slogan {
+  margin: 0;
+  margin-bottom: 13px;
   font-size: 30px;
   font-weight: 700;
   line-height: 30px;
   text-align: center;
   text-transform: uppercase;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 0;
+    font-size: 40px;
+    line-height: 40px;
+    text-align: left;
+    text-transform: none;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 34px;
+  }
 }
 
 .stats__intro {
+  margin: 0;
   font-size: 20px;
   text-align: center;
+
+  @media (max-width: $mobile-width-only) {
+    br {
+      display: none;
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    padding-top: 4px;
+    padding-left: 34px;
+    text-align: left;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 10px;
+    padding-left: 0;
+  }
+}
+
+.stats__legend {
+  display: block;
+  margin: 0;
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.stats__legend--top {
+  color: rgba(0, 0, 0, 0.3);
+
+  @media (max-width: $mobile-width-only) {
+    display: none;
+  }
+}
+
+.stats__legend--bottom {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.3);
+
+  @media (min-width: $tablet-width) {
+    display: none;
+  }
 }
 
 .stats__list {
-  color: $white;
+  margin: 0;
+  margin-bottom: 20px;
   background-color: $gray-mid;
+
+  @media (min-width: $tablet-width) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0;
+  }
 }
 
-.stats__item:nth-child(even) {
-  background-color: rgba(255, 255, 255, 0.12);
-}
+.stats__item {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
 
-.stats__item:nth-child(odd) {
-  background-color: rgba(45, 38, 130, 0.05);
+  &:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.12);
+  }
+
+  &:nth-child(odd) {
+    background-color: rgba(45, 38, 130, 0.05);
+  }
+
+  &:nth-child(3) {
+    background-color: $gray-mid;
+  }
+
+  @media (min-width: $tablet-width) {
+    display: block;
+    padding: 25px 34px 30px;
+
+    &:nth-child(1),
+    &:nth-child(4) {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    &:not(:first-child) {
+      min-height: 161px;
+    }
+  }
 }
 
 .stats__number {
   font-size: 40px;
   font-weight: 700;
   line-height: 40px;
+
+  sup {
+    position: static;
+    margin-left: 5px;
+    font-size: inherit;
+    vertical-align: baseline;
+  }
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 12px;
+    font-size: 72px;
+    line-height: 72px;
+  }
 }
 
 .stats__description {
+  margin: 0;
   line-height: 18px;
-}
+  text-align: right;
 
-.stats__legend {
-  font-size: 20px;
-  line-height: 20px;
-  text-align: center;
-  color: rgba(255, 255, 255, 0.3);
-  background-color: $dark-grey;
+  @media (min-width: $tablet-width) {
+    font-size: 20px;
+    text-align: left;
+
+    br {
+      display: none;
+    }
+  }
 }

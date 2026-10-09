@@ -7,9 +7,13 @@
 
 /* BLOCKS */
 @import "./blocks/button.scss";
+@import "./blocks/slider.scss";
+@import "./blocks/field.scss";
+@import "./blocks/control.scss";
 @import "./blocks/page.scss";
 @import "./blocks/main-container.scss";
-@import "./blocks/slider.scss";
+@import "./blocks/modal.scss";
+@import "./blocks/main-title.scss";
 
 /* header */
 @import "./blocks/main-header.scss";
@@ -24,8 +28,11 @@
 @import "./blocks/reviews.scss";
 
 /* photo */
-@import "./blocks/main-title.scss";
 @import "./blocks/works.scss";
+@import "./blocks/price.scss";
+
+/* photo */
+@import "./blocks/appointment.scss";
 
 /* footer */
 @import "./blocks/main-footer.scss";

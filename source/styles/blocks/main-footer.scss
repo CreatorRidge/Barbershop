@@ -1,4 +1,39 @@
 .main-footer {
   color: $white;
   background-color: $dark-grey;
+  padding-top: $transition-height-mobile;
+
+  @media (min-width: $tablet-width) {
+    padding-top: 0;
+  }
+}
+
+.main-footer__wrapper {
+  padding: 33px 0 24px;
+
+  @media (min-width: $tablet-width) {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    padding: 51px 64px 59px;
+  }
+
+  @media (min-width: $desktop-width) {
+    max-width: 960px;
+    margin: auto;
+    padding: 51px 0 55px;
+  }
+}
+
+.main-footer__social {
+  width: 100%;
+
+  @media (min-width: $tablet-width) {
+    order: 2;
+  }
+
+  @media (min-width: $desktop-width) {
+    order: 0;
+    width: 150px;
+  }
 }
